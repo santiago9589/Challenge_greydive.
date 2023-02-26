@@ -14,14 +14,14 @@ const BodyHome = ({ data }: props) => {
 
     return (
         <>
-        home component
-        {
-            data.map((client)=>{
-                return (
-                    <CardClient key={client.cliente} name={client.cliente} handleNavigation={()=>router.push(`/clients/${client.cliente}`)}/>
-                )
-            })
-        }
+            <h1>home</h1>
+            {
+                data.map((client) => {
+                    return (
+                        <CardClient key={client.cliente} name={client.cliente} handleNavigation={() => router.push(`/clients/${client.cliente}`)} />
+                    )
+                })
+            }
         </>
     )
 }

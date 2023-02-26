@@ -1,6 +1,7 @@
 import { api } from 'api/api';
 import ErrorComponent from 'components/ErrorComponent/ErrorComponent';
 import BodyHome from 'components/HomeComponent/BodyHome';
+import NavbarComponent from 'components/navbar/navbarComponen';
 
 
 async function getData() {
