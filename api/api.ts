@@ -4,29 +4,6 @@ import { response, responseGetClients, responseRoutes } from "types/reponse"
 import { data } from "./data"
 
 
-// export const api = {
-//     list: async (): Promise<Root[]> => {
-//         const response = await data
-//         return response
-//     },
-//     routes: async (): Promise<string[]> => {
-//         const response = await data
-//         const routes = response.reduce((acc: string[], current: Root) => {
-//             acc.push(current.cliente)
-//             return acc
-//         }, [""])
-
-//         return routes
-//     },
-//     getClient: async (query: string): Promise<Root> => {
-//         const response = await data.filter((client) => {
-//             return client.cliente === query
-//         })
-//         return response[0]
-//     }
-
-// }
-
 export const api = {
     list: async (): Promise<response> => {
         const response: response = { data: [], error: "" }
@@ -74,7 +51,6 @@ export const api = {
             return responseGetClients
 
         } catch (error) {
-
             responseGetClients.error = "Upps ha ocurrido un error"
             return responseGetClients
         }
