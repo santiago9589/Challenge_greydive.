@@ -1,4 +1,5 @@
 import { api } from 'api/api';
+import ErrorComponent from 'components/ErrorComponent/ErrorComponent';
 import BodyHome from 'components/HomeComponent/BodyHome';
 
 
@@ -14,7 +15,10 @@ const Home = async () => {
 
   return (
     <>
-      <BodyHome data={data} />
+      <BodyHome data={data.data} />
+      {
+        data.error && (<ErrorComponent error={data.error} />)
+      }
     </>
   )
 }

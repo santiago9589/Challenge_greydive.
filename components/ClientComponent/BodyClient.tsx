@@ -7,8 +7,6 @@ interface props{
 
 const BodyClient = ({client}:props) => {
 
-  console.log(client)
-
   return (
     <div>BodyClient</div>
   )
