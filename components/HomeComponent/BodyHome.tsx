@@ -15,13 +15,15 @@ const BodyHome = ({ data }: props) => {
     return (
         <>
             <h1>home</h1>
-            {
-                data.map((client) => {
-                    return (
-                        <CardClient key={client.cliente} name={client.cliente} handleNavigation={() => router.push(`/clients/${client.cliente}`)} />
-                    )
-                })
-            }
+            <section className="flex flex-col space-y-2">
+                {
+                    data.map((client) => {
+                        return (
+                            <CardClient video={client.linkVideo} key={client.cliente} name={client.cliente} handleNavigation={() => router.push(`/clients/${client.cliente}`)} />
+                        )
+                    })
+                }
+            </section>
         </>
     )
 }
