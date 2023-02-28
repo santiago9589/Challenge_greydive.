@@ -1,0 +1,48 @@
+"use client"
+
+import React from 'react'
+import { useFormik } from 'formik'
+import { initValues, validationSchema } from './data/initdata'
+import FormComponent from 'components/FormComponent/Form'
+import InputComponent from 'components/FormComponent/Input'
+import { api } from 'api/api'
+import { user } from 'types/user'
+
+const ContactUs = () => {
+
+  const formik = useFormik<user>({
+    initialValues: initValues,
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      api.login(values)
+      handleReset(values)
+    }
+  })
+
+  const { handleChange, handleSubmit, handleReset, values, errors, touched } = formik
+
+  return (
+    <FormComponent onSubmit={handleSubmit}>
+      <InputComponent
+        name="email"
+        placeholder="example@example.com"
+        type="text"
+        value={values.email}
+        errors={errors.email}
+        touched={touched.email}
+        onChange={handleChange}
+      />
+      <InputComponent
+        name="password"
+        placeholder="xx-xxxxxxxxxx"
+        type="text"
+        value={values.password}
+        errors={errors.password}
+        touched={touched.password}
+        onChange={handleChange}
+      />
+    </FormComponent>
+  )
+}
+
+export default ContactUs

@@ -14,3 +14,8 @@ export interface responseGetClients{
     data:Root | any
     error:string
 }
+
+export interface loginLogout{
+    message:string
+    state:boolean
+}

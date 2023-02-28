@@ -1,7 +1,8 @@
 import axios from "axios"
 import { Root } from "types/api"
 import { contact } from "types/contact"
-import { response, responseGetClients, responseRoutes } from "types/reponse"
+import { loginLogout, response, responseGetClients, responseRoutes } from "types/reponse"
+import { user } from "types/user"
 import { data } from "./data"
 
 
@@ -58,6 +59,18 @@ export const api = {
     },
     postContactUs: async (contact: contact): Promise<string> => {
         return ` ${contact.name} We will contact you as soon as possible`
+    },
+    login: async (user: user): Promise<loginLogout> => {
+        return {
+            message: ` ${user.email} Welcome to our page`,
+            state: true
+        }
+    },
+    logout: async (): Promise<loginLogout> => {
+        return {
+            message: `I hope see you soon, good bye`,
+            state: false
+        }
     }
 
 }
