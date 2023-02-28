@@ -32,7 +32,7 @@ const WhoAreWe = () => {
               tenetur vitae ab atque cumque autem ad,
               laborum incidunt.
             </p>
-            <Image width="350" src={image} alt="logo" />
+            <Image className='w-[350px] xl:w-1/2 xl:mx-auto' src={image} alt="logo" />
           </section>
         ) : (null)
       }
