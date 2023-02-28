@@ -2,7 +2,7 @@ import {useState,Dispatch,SetStateAction} from "react"
 import { routes } from "types/routes"
 
 const routesData: routes[] = [
-    { url: "/", link: "Home", selected: false },
+    { url: "/home", link: "Home", selected: false },
     { url: "/contactus", link: "Contact us", selected: false },
     { url: "/whoarewe", link: "Who are we", selected: false }
 ]

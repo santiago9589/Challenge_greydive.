@@ -18,7 +18,7 @@ const BodyClient = ({ client }: props) => {
     <article className='p-4'>
       <header className='flex flex-col justify-center mt-2 space-y-2 mb-4'>
         <button className='bg-white rounded-lg p-2 w-1/3 mx-auto text-black'
-          onClick={() => route.push("/")}
+          onClick={() => route.push("/home")}
         >Back to menu</button>
         <h1 className='text-center text-4xl capitalize'>
           client {client.cliente}
