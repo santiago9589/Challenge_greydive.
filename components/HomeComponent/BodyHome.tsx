@@ -14,8 +14,13 @@ const BodyHome = ({ data }: props) => {
 
     return (
         <>
-            <h1>home</h1>
-            <section className="flex flex-col space-y-2">
+            <header className="flex flex-col w-full my-2 space-y-2">
+                <h1 className="text-center text-4xl capitalize font-mono">List of Clients</h1>
+                <h1 className="text-center text-2xl capitalize font-mono">
+                    {data.length} Clients
+                </h1>
+            </header>
+            <section className="flex flex-col space-y-2 gap-2">
                 {
                     data.map((client) => {
                         return (
