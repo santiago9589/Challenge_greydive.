@@ -1,5 +1,6 @@
 import axios from "axios"
 import { Root } from "types/api"
+import { contact } from "types/contact"
 import { response, responseGetClients, responseRoutes } from "types/reponse"
 import { data } from "./data"
 
@@ -54,6 +55,9 @@ export const api = {
             responseGetClients.error = "Upps ha ocurrido un error"
             return responseGetClients
         }
+    },
+    postContactUs: async (contact: contact): Promise<string> => {
+        return ` ${contact.name} We will contact you as soon as possible`
     }
 
 }

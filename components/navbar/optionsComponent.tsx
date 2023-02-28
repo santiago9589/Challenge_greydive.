@@ -15,7 +15,7 @@ const OptionComponent = ({ handleClick, option, url,selected }: props) => {
 
   return (
     <Link href={url}>
-      <p  className={` p-2 ${selected ? "bg-white text-black":""}`} onClick={()=>handleClick()}>{option}</p>
+      <p  className={` p-2 ${selected ? "bg-white text-black":"text-gray-300"}`} onClick={()=>handleClick()}>{option}</p>
     </Link>
   )
 }
