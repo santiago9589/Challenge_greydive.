@@ -7,14 +7,21 @@ import FormComponent from 'components/FormComponent/Form'
 import InputComponent from 'components/FormComponent/Input'
 import { api } from 'api/api'
 import { user } from 'types/user'
+import { useLogged } from 'store/store'
 
 const ContactUs = () => {
 
+  const { setError, setLogged } = useLogged()
   const formik = useFormik<user>({
     initialValues: initValues,
     validationSchema: validationSchema,
-    onSubmit: (values) => {
-      api.login(values)
+    onSubmit: async (values) => {
+      try {
+        const response = await api.login(values)
+        setLogged(response.state)
+      } catch (error: any) {
+        setError(error.message)
+      }
       handleReset(values)
     }
   })

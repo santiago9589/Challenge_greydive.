@@ -1,7 +1,11 @@
 
+
 import React from 'react'
 
+
 const FooterComponent = () => {
+
+
   return (
     <footer className='flex justify-center mt-2 space-x-2 text-lg items-center'>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

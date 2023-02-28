@@ -27,7 +27,7 @@
     "typescript": "4.9.5",
     "vitest": "^0.28.5",
     "yup": "^1.0.2",
-    "zustand": "^4.3.3"
+    "zustand": "^4.3.5"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",

@@ -14,7 +14,7 @@ export const api = {
             response.data = responseAsync
             return response
         } catch (error) {
-            response.error = "Upps ha ocurrido un error"
+            response.error = "Upps Error"
             return response
         }
     },
@@ -34,7 +34,7 @@ export const api = {
 
         } catch (error) {
 
-            responseRoutes.error = "Upps ha ocurrido un error"
+            responseRoutes.error = "Upps Error"
             return responseRoutes
         }
     },
@@ -53,7 +53,7 @@ export const api = {
             return responseGetClients
 
         } catch (error) {
-            responseGetClients.error = "Upps ha ocurrido un error"
+            responseGetClients.error = "Upps Error"
             return responseGetClients
         }
     },
@@ -61,15 +61,29 @@ export const api = {
         return ` ${contact.name} We will contact you as soon as possible`
     },
     login: async (user: user): Promise<loginLogout> => {
-        return {
-            message: ` ${user.email} Welcome to our page`,
-            state: true
+        try {
+            return {
+                message: ` ${user.email} Welcome to our page`,
+                state: true
+            }
+        } catch (error) {
+            return {
+                message: "Upps Error",
+                state: false
+            }
         }
     },
     logout: async (): Promise<loginLogout> => {
-        return {
-            message: `I hope see you soon, good bye`,
-            state: false
+        try {
+            return {
+                message: `I hope see you soon, good bye`,
+                state: false
+            }
+        } catch (error) {
+            return {
+                message: "Upps Error",
+                state: true
+            }
         }
     }
 
